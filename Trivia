@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="alert.js" defer>
+let correcto = document.getElementById("4");
+    let cuadra = document.getElementById("cuadrado");
+    let in1 = document.getElementById("1");
+    let in2 = document.getElementById("2");
+    let in3 = document.getElementById("3");
+    let bien = document.getElementById("bien");
+    
+    correcto.addEventListener('click', boton);
+    in1.addEventListener('click', mal1)
+    in2.addEventListener('click', mal2)
+    in3.addEventListener('click', mal3)
+
+
+    function boton() {
+        correcto.style.backgroundColor = 'green'; // Cambia 'backgroundcolor' por 'backgroundColor'
+        bien.innerText = "Seleccionaste la opcion correcta";
+        setTimeout(reset, 3000);
+    }
+    function mal1(){
+        in1.style.backgroundColor = 'red';
+        setTimeout(reset, 1000);
+        bien.innerText = "Seleccionaste la opcion incorrecta";
+    }
+    function mal2(){
+        in2.style.backgroundColor = 'red';
+        setTimeout(reset, 1000);
+        bien.innerText = "Seleccionaste la opcion incorrecta";
+    }
+    function mal3(){
+        in3.style.backgroundColor = 'red';
+        setTimeout(reset, 1000);
+        bien.innerText = "Seleccionaste la opcion incorrecta";
+    }
+    function reset(){
+        in1.style.backgroundColor = '';
+        in2.style.backgroundColor = '';
+        in3.style.backgroundColor = '';
+        correcto.style.backgroundColor = ''
+        bien.innerText = '';
+    }
+    
+
+    </script>
+    <link rel="stylesheet" href="style.css">
+<style>
+#h1i{
+    text-align: center;
+}
+
+#div1 {
+    text-align: center;
+}
+
+#\31, #\32, #\33, #\34 {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#\31 { background-color: gray; color: white; }
+#\32 { background-color: gray; color: white; }
+#\33 { background-color: gray; color: white; }
+#\34 { background-color: gray; color: white; }
+
+button:hover {
+    background-color: darkgray;
+}
+
+</style>
+</head>
+<body>
+    <h1 id="h1i">2 + 2</h1>
+    <div id="div1">
+        <button id="1" type="button">1</button>
+        <button id="2" type="button">2</button>
+        <button id="3" type="button">3</button>
+        <button id="4" type="button">4</button>
+    </div>
+    <h2 id="bien"></h2>
+</body>
+</html>
