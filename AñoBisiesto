@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="alert.js" defer>
+    
+let año = document.getElementById("anio");
+let boton = document.getElementById("enviar");
+let res = document.getElementById("bis");
+
+boton.addEventListener('click', calcular);
+
+function calcular(){
+    const n = parseFloat(año.value);
+    if (!isNaN(n)) {
+        if((n % 4 == 0) && (n % 100 != 0) || (n % 400 == 0)){
+        res.innerText = 'El año ingresado es bisiesto';
+        }
+        else{
+        res.innerText = 'El año ingresado no es bisiesto';
+        }
+    }
+    else{
+        res.innerText = 'Porfavor ingrese un valor valido';
+    }
+}
+    </script>
+</head>
+<body>
+    <h1>¿Año bisiesto o no?</h1>
+    <form action="" method="dialog">
+        <input type="text" id="anio" placeholder="Ingrese un año">
+        <button id="enviar" type="button">Enviar</button>
+    </form>
+    <h2 id="bis"></h2>
+</body>
+</html>
